@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorik Markarian - AI for Social Impact</title>
+    <style>
+        :root {
+            --primary-color: #2e5077;
+            --secondary-color: #4d7ea8;
+            --accent-color: #94b0da;
+            --light-color: #f0f6ff;
+            --dark-color: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 5px;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+        
+        .summary {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .experience-item, .education-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .job-title, .degree {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .company, .university {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .certificate {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .name {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .certificates {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="profile-image">LM</div>
+            <h1 class="name">Lorik Markarian</h1>
+            <p class="title">AI for Social Impact | Program Coordinator with Nonprofit & Community Sector Expertise</p>
+            <div class="contact-info">
+                <span class="contact-item">
+                    <i>✉️</i> lorikmarkarian@gmail.com
+                </span>
+                <span class="contact-item">
+                    <i>📱</i> +61 4XX XXX XXX
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="summary">
+            <p>Impact-driven Program Coordinator with deep experience in the nonprofit and community sectors, now focused on leveraging AI to drive social innovation and equity. Proven ability to lead education and outreach programs, coordinate multi-stakeholder initiatives, and translate complex challenges into strategic, people-centred solutions. Skilled in impact measurement, data analysis, and ethical tech integration. Passionate about using AI to empower under-resourced communities, streamline nonprofit operations, and amplify outcomes across social and environmental causes. Seeking to contribute to mission-led teams harnessing technology for good.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Program Coordinator</h3>
+                <p class="company">Widening Participation Unit, Macquarie University, Sydney Australia</p>
+                <p class="date">Jul 2022 - Dec 2024</p>
+                <ul>
+                    <li>Coordinated university access and participation programs aligned with equity and inclusion goals, supporting underrepresented students from LSES, regional, and Indigenous backgrounds.</li>
+                    <li>Designed program logic models, defined measurable outcomes, and developed Gantt charts and CQI processes for program improvement.</li>
+                    <li>Collected and analysed program impact data for internal and external reporting, contributing to evidence-based practice and continuous improvement efforts.</li>
+                    <li>Developed WPU's Data Management and Privacy Policy Plan, ensuring compliance with institutional and ethical standards around data protection and privacy.</li>
+                    <li>Planned and executed regional initiatives in partnership with schools and community networks (e.g., Roads to Discovery in Broken Hill), securing in-kind and financial contributions to support sustainability.</li>
+                    <li>Supported stakeholder engagement, including Indigenous communities, career advisors, and regional education networks, aligning outreach with reconciliation and access goals.</li>
+                    <li>Led procurement and contract processes while ensuring compliance with financial regulations and institutional guidelines.</li>
+                    <li>Contributed to the delivery of communication materials and events that supported community outreach and stakeholder engagement.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Education Projects Coordinator</h3>
+                <p class="company">British Council</p>
+                <p class="date">Jan 2019 - Feb 2022</p>
+                <ul>
+                    <li>Coordinated donor-funded education projects in partnership with the Ministry of Education and community stakeholders.</li>
+                    <li>Oversaw event logistics for large-scale education conferences and workshops, supporting speaker engagement and attendee communications.</li>
+                    <li>Maintained partner contact databases and supported reporting with clear metrics and insights to inform future programming.</li>
+                    <li>Facilitated communications with donors and partners, supporting proposal development and the rollout of national campaigns.</li>
+                    <li>Assisted and monitored the running and launching of coding skills clubs and language hubs in the rural regions of Armenia, which included identifying partners to join our organisation to facilitate training and mentoring.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Chief Executive Officer</h3>
+                <p class="company">Goals Non-For-Profit</p>
+                <p class="date">Jun 2017 - Nov 2018</p>
+                <ul>
+                    <li>Organised and oversaw the opening of Armenia's first eight women's football leagues.</li>
+                    <li>Supervised activities of staff within the organisation.</li>
+                    <li>Contributed to the NFP's rapid growth with participation levels increasing 97% from 2017 to 2018.</li>
+                    <li>Fostered positive relationships with beneficiaries and donors and provided adequate reports to donors, grantors and board members.</li>
+                    <li>Oversaw budgeting and established effective strategies for financial sustainability.</li>
+                    <li>Worked as a community impact coach in Armenia as well as in neighbouring countries with the intention of training educators to learn about civic education, develop their life skills and have better leadership skills.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Head Of Programming</h3>
+                <p class="company">Goals Non-For-Profit</p>
+                <p class="date">Jun 2015 - Mar 2017</p>
+                <ul>
+                    <li>Designed and created after-school club handbooks on leadership and problem solving, diversity and equity, finance and healthy lifestyle.</li>
+                    <li>Coordinated with international partners to implement training sessions in Armenia that would benefit 500 youth workers and educators.</li>
+                    <li>Worked directly with teachers and educators and provided them with civic education, life skills and informal learning training sessions in rural regions of Armenia.</li>
+                    <li>Wrote grant applications, facilitated fundraising campaigns and fostered sustainability for the organisation.</li>
+                    <li>Developed, compiled and analysed 700 surveys for program monitoring and evaluation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <h3 class="degree">Master Of Arts - Teaching English As A Second Language</h3>
+                <p class="university">American University Of Armenia</p>
+            </div>
+
+            <div class="education-item">
+                <h3 class="degree">Bachelor Of Arts - English Language Translation</h3>
+                <p class="university">Azad University</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Technical & Project Management Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Smartsheet</span>
+                        <span class="skill-item">Microsoft Project</span>
+                        <span class="skill-item">Trello</span>
+                        <span class="skill-item">Jira</span>
+                        <span class="skill-item">Stakeholder Management</span>
+                        <span class="skill-item">Procurement Management</span>
+                        <span class="skill-item">Risk Mitigation</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data & Reporting</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Qualtrics</span>
+                        <span class="skill-item">Google Forms</span>
+                        <span class="skill-item">LimeSurvey</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">Impact Measurement</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Software & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Microsoft Office Suite</span>
+                        <span class="skill-item">Microsoft Teams</span>
+                        <span class="skill-item">CTM Portal</span>
+                        <span class="skill-item">Squize Website Editing</span>
+                        <span class="skill-item">iLearn Courses Platform</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Certificates</h2>
+            
+            <div class="certificates">
+                <div class="certificate">
+                    <p>Behind the B: An Introduction to the B Corp Movement - In progress</p>
+                </div>
+                <div class="certificate">
+                    <p>What Is Generative AI? LinkedIn Learning (March 2025)</p>
+                </div>
+                <div class="certificate">
+                    <p>Using Gen AI To Develop Personalized Learning Plans, LinkedIn Learning (March 2025)</p>
+                </div>
+                <div class="certificate">
+                    <p>Introduction To AI, The Institute Of Applied Technology (2025)</p>
+                </div>
+                <div class="certificate">
+                    <p>First Aid Training (Hltaid009, Hltaid010, Hltaid011) (Nov 2023)</p>
+                </div>
+                <div class="certificate">
+                    <p>Manawari Staff Aboriginal Cultural Safety Training, Macquarie University (2022)</p>
+                </div>
+                <div class="certificate">
+                    <p>Working With Children Check (Exp. 2027)</p>
+                </div>
+                <div class="certificate">
+                    <p>Program Management Certificate, American University Of Armenia (2019)</p>
+                </div>
+                <div class="certificate">
+                    <p>Child Protection Policy Certificate, British Council (2019)</p>
+                </div>
+                <div class="certificate">
+                    <p>Understanding Equality, Diversity and Inclusion Certificate, British Council (2019)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lorik Markarian | AI for Social Impact</p>
+        </div>
+    </footer>
+</body>
+</html>
